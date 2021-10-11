@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-const prompt = " and press ENTER when ready."
+const prompt = "and press ENTER when ready."
 
 func main() {
 
@@ -20,7 +20,7 @@ func main() {
 	//one step variable:declare name, assign value, and let go figure out type
 	subtraction := 7
 
-	//var answer int
+	var answer = firstNumber*secondNumber - subtraction
 
 	reader := bufio.NewReader((os.Stdin))
 	fmt.Println("Guess the Number Game")
@@ -32,9 +32,14 @@ func main() {
 	fmt.Println("Multiply your number by ", firstNumber, prompt)
 	reader.ReadString('\n')
 
-	fmt.Println("Now multiply the number by", secondNumber, prompt)
+	fmt.Println("Now multiply that number by", secondNumber, prompt)
+	reader.ReadString('\n')
+
+	fmt.Println("Divide the reusult by the number you originally thought of", prompt)
 	reader.ReadString('\n')
 
 	fmt.Println("Now subtract", subtraction, prompt)
 	reader.ReadString('\n')
+
+	fmt.Println("Is the answer", answer, "? :)")
 }
